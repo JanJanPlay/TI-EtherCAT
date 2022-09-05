@@ -1,0 +1,92 @@
+Index: ecatappl.c
+--- ecatappl.c	Fri Jan 09 10:22:04 2015
++++ ecatappl.c	Thu May 18 16:06:08 2017
+@@ -335,7 +335,7 @@
+                 UINT32 CalcCycleTime = 0;
+ 
+ 
+-#if ECAT_TIMER_INC_P_MS
++#ifdef ECAT_TIMER_INC_P_MS //TI C28x port changed the #if to #ifdef because this is a func in C2k HAL
+                 CalcCycleTime = (UINT32)u16BusCycleCntMs * 1000000 + (((INT32)(CurTimerCnt-StartTimerCnt))*1000000/ECAT_TIMER_INC_P_MS);    //get elapsed cycle time in ns
+ #endif
+ 
+Index: ecatslv.c
+
+--- ecatslv.c	Fri Jan 09 10:22:04 2015
++++ ecatslv.c	Thu May 18 16:04:41 2017
+@@ -838,8 +838,8 @@
+ #if ESC_16BIT_ACCESS
+ /* ECATCHANGE_START(V5.11) HW2*/
+     //Check if the start address and length are even 16Bit addresses
+-    if ((SMLength & 0x1) > 0)
+-        return ALSTATUSCODE_INVALIDSMCFG;
++    //if ((SMLength & 0x1) > 0)//TI C28x Port - commented this check out
++    //    return ALSTATUSCODE_INVALIDSMCFG;
+ 
+     if ((SMAddress & 0x1) > 0)
+         return ALSTATUSCODE_INVALIDSMCFG;
+@@ -912,8 +912,9 @@
+ #if ESC_16BIT_ACCESS
+ /* ECATCHANGE_START(V5.11) HW2*/
+     //Check if the start address and length are even 16Bit addresses
+-    if ((SMLength & 0x1) > 0)
+-        return ALSTATUSCODE_INVALIDSMCFG;
++    //if ((SMLength & 0x1) > 0)//TI C28x Port - commented this check out
++    //    return ALSTATUSCODE_INVALIDSMCFG;
++
+ 
+     if ((SMAddress & 0x1) > 0)
+         return ALSTATUSCODE_INVALIDSMCFG;
+@@ -981,8 +982,9 @@
+ #if ESC_16BIT_ACCESS
+ /* ECATCHANGE_START(V5.11) HW2*/
+     //Check if the start address and length are even 16Bit addresses
+-    if ((SMLength & 0x1) > 0)
+-        return ALSTATUSCODE_INVALIDSMCFG;
++    //if ((SMLength & 0x1) > 0)//TI C28x Port - commented this check out
++    //    return ALSTATUSCODE_INVALIDSMCFG;
++
+ 
+     if ((SMAddress & 0x1) > 0)
+         return ALSTATUSCODE_INVALIDSMCFG;
+@@ -1087,8 +1089,9 @@
+ #if ESC_16BIT_ACCESS
+ /* ECATCHANGE_START(V5.11) HW2*/
+     //Check if the start address and length are even 16Bit addresses
+-    if ((SMLength & 0x1) > 0)
+-        return ALSTATUSCODE_INVALIDSMCFG;
++    //if ((SMLength & 0x1) > 0)//TI C28x Port - commented this check out
++    //    return ALSTATUSCODE_INVALIDSMCFG;
++
+ 
+     if ((SMAddress & 0x1) > 0)
+         return ALSTATUSCODE_INVALIDSMCFG;
+
+		  
+ 
+Index: mailbox.h
+--- mailbox.h	Thu May 18 16:08:53 2017
++++ mailbox.h	Fri Jan 09 10:22:04 2015
+@@ -125,7 +125,7 @@
+ TMBXHEADER;
+ 
+
+-#define     MBX_HEADER_SIZE         SIZEOF(TMBXHEADER) /**< \brief Mailbox header size*/ 
++#define     MBX_HEADER_SIZE         6 /**< \brief Mailbox header size*/
+
+ 
+ 
+ #define     MAX_MBX_DATA_SIZE       (MAX_MBX_SIZE - MBX_HEADER_SIZE) /**< \brief Mailbox data size*/
+ 
+Index: ecatslv.h
+--- ecatslv.h	Thu May 18 16:09:10 2017
++++ ecatslv.h	Fri Jan 09 10:22:04 2015
+@@ -28,6 +28,8 @@
+ #ifndef _ECATSLV_H_
+ #define _ECATSLV_H_
+ 
++//TI patched file
++
+ /*-----------------------------------------------------------------------------------------
+ ------
+ ------    Includes

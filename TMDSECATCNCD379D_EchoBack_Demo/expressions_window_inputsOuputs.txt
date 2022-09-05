@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExportImportMemento.1>
+<VarMeta IMemento.internal.id="Switches0x6000"/>
+<VarMeta IMemento.internal.id="LEDS0x7000"/>
+<VarMeta IMemento.internal.id="DataToMaster0x6010.DataToMaster"/>
+<VarMeta IMemento.internal.id="DatafromMaster0x7010.DatafromMaster"/>
+<VarMeta IMemento.internal.id="TargetModeResponse0x6012.ModeResponse"/>
+<VarMeta IMemento.internal.id="TargetMode0x7012.Mode"/>
+<VarMeta IMemento.internal.id="TargetSpeedPosFeedback0x6014.SpeedPosFbk"/>
+<VarMeta IMemento.internal.id="TargetSpeedPosReq0x7014.SpeedPosReq"/>
+</ExportImportMemento.1>

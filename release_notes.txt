@@ -1,0 +1,40 @@
+Release notes for Software included in TMDSECATCNCD379D_V1.0
+
+Date:- 09/29/2017
+
+Documents:-
+	 1. SPRUIF9.pdf - HW, Demo and PDI HAL API TEST APP Getting started guide
+  	 2. SPRUIG9.pdf - TMDSECATCND379D EtherCAT Solution Reference guide
+
+
+Deliverables:- 
+
+	 1. PDI HAL Test APP for TMDSECATCNCD379D 
+		Note:- Code Composer Studio project
+
+	 2. EtherCAT solution reference project 
+		Note:- For users to do source level debug with ETG SSC tool generated EtherCAT slave stack sources. Before building this project please read SPRUIG9.pdf
+
+	 3. SSC(Slave Stack code) Tool Patches for C28x
+		Note:- ETG(EtherCAT Technology group) SSC Tool patches for C28x MCU. This needs to be used if the SSC tool doesn't by default support the C28x config
+
+	 4. Out of box Demo OUT file(s) 
+		Note:- User will need to program the binary/COFF files on the ESC. 
+		Please read SPRUIF9 on how to use the DEMO files.
+
+
+Note:- Deliverables 3 and 4 are obtained by running the zip installer available in the folder.		
+
+
+EtherCAT slave stack features supported in this release:- 
+	 1. COE Mailbox support for data exchange
+	 2. Conformance Test Tool run on the demo application
+	 3. TwinCAT EtherCAT master running on a laptop is used as EtherCAT master.
+ 
+Build Environment:-
+	Slave Stack code base line :-  v5.11
+	CCS compiler version :- 16.12.x
+	CTT tool version used for test :- 2.0.42.0
+		Test Library version:- 1.1.0.0
+
+

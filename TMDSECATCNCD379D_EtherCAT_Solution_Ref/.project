@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>TMDSECATCNCD379D_EtherCAT_Reference</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.cdt.managedbuilder.core.genmakebuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+			<name>org.eclipse.cdt.managedbuilder.core.ScannerConfigBuilder</name>
+			<triggers>full,incremental,</triggers>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>com.ti.ccstudio.core.ccsNature</nature>
+		<nature>org.eclipse.cdt.core.cnature</nature>
+		<nature>org.eclipse.cdt.managedbuilder.core.managedBuildNature</nature>
+		<nature>org.eclipse.cdt.core.ccnature</nature>
+		<nature>org.eclipse.cdt.managedbuilder.core.ScannerConfigNature</nature>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>hal</name>
+			<type>2</type>
+			<locationURI>PROJECT_LOC/hal</locationURI>
+		</link>
+	</linkedResources>
+	<variableList>
+		<variable>
+			<name>COMMON_ETHERCAT_FILES</name>
+			<value>$%7BPARENT-1-PROJECT_LOC%7D/common</value>
+		</variable>
+		<variable>
+			<name>INSTALLROOT_F2837XD</name>
+			<value>file:/C:/ti/controlSUITE/device_support/F2837xD/v200</value>
+		</variable>
+	</variableList>
+</projectDescription>
